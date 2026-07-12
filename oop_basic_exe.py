@@ -150,3 +150,21 @@ receipt1.add_item("latte",4.5)
 receipt1.add_item("oj",2.0)
 receipt1.add_item("watter",1.5)
 receipt1.print_reciept()
+
+#extra exe
+#mission 1 
+class menuitem():
+    def __init__(self,name,price,category):
+        self.name=name
+        self.price=price
+        self.category=category
+    def is_drink(self):
+        return True if "drink" in self.category else False
+    def is_cheap(self,limit):
+        return True if self.price<limit else False
+item1=menuitem("espreso",3.5,"hot drink")
+print(item1.is_drink())
+print(item1.is_cheap(3.5))
+item2=menuitem("muffin",2.0,"food")
+print(item2.is_drink())
+print(item2.is_cheap(3.5))
