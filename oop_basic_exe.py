@@ -194,3 +194,42 @@ customer1.status()
 customer1.purchase("pen",16)     
 customer1.redeem()
 customer1.status()
+
+#mission 3
+class order():
+    def __init__(self,customer_name,items):
+        self.customer_name=customer_name
+        self.items=items
+    def total_prep_time(self):
+        total_time=0
+        for item in self.items:
+            total_time+=item[1]
+        return total_time
+    def ready_by(self,minutes):
+        return True if self.total_prep_time()<=minutes else False
+    def print_order(self):
+        for item in self.items:
+            print(item)
+    def slowest_item(self):
+        time=0
+        item1=""
+        for item in self.items:
+            if item[1]>time:
+                time+=item[1]
+                item1=item[0]
+        return item1
+moshe=order("moshe",[("latte",3),("sandwitch",7),("smoo",5)]) 
+print(moshe.total_prep_time())
+print(moshe.ready_by(10))
+print(moshe.ready_by(20))
+moshe.print_order()
+print(moshe.slowest_item())
+
+
+  
+            
+
+
+
+
+
