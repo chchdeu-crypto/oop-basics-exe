@@ -267,3 +267,30 @@ latte.describe()
 latte=drink("latte",3.0,"large")
 latte.describe()
 
+#mission 6
+class Shift:
+    def __init__(self, barista_name, start_hour, end_hour, drinks_target):
+        self.barista_name = barista_name
+        self.start_hour = start_hour
+        self.end_hour = end_hour
+        self.drinks_target = drinks_target
+
+    def duration(self):
+        return self.end_hour - self.start_hour
+
+    def drinks_per_hour(self):
+        return self.drinks_target / self.duration()
+
+    def is_long_shift(self):
+        return self.duration() > 6
+
+    def describe(self):
+        print(f"Barista: {self.barista_name}")
+        print(f"Hours: {self.duration()}")
+        print(f"Target: {self.drinks_target}")
+        print(f"Per hour: {self.drinks_per_hour()}")
+        print(f"Long shift: {self.is_long_shift()}")
+
+
+shift = Shift("Lior", 8, 16, 120)
+shift.describe()
