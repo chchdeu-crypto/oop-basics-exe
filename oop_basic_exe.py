@@ -72,3 +72,17 @@ class Coffeeshop():
 shop=Coffeeshop("brew house","tel aviv",40)
 shop.open_shop()
 shop.close_shop()
+
+#mission 7
+class menuitem():
+    def __init__(self,name,price):
+        self.name=name
+        self.price=price
+        self.order_count=0
+    def order(self):
+        self.order_count+=1
+        print(f"{self.name} orderd. total orders:{self.order_count}")
+cappuccino=menuitem("cappuccino",4.0)
+cappuccino.order()
+cappuccino.order()
+cappuccino.order()
