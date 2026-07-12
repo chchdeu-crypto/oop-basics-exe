@@ -244,10 +244,26 @@ bean.cell("watter",7)
 bean.sell_dicounted("juice",16,0.8)
 bean.sell_dicounted("ice coffe",10,0.15)
 bean.daily_summary()
-  
-            
 
-
-
-
+#mission 5
+class drink():
+    def __init__(self,name,base_price,size):
+        self.name=name
+        self.base_price=base_price
+        self.size=size
+    def finel_price(self):
+        if self.size=="small":
+            return self.base_price
+        elif self.size=="medium":
+            return self.base_price*1.3
+        elif self.size=="large":
+            return self.base_price*1.6
+    def describe(self):
+        print(f"{self.name} ({self.size}) $ {self.finel_price()}")
+latte=drink("latte",3.0,"small")
+latte.describe()
+latte=drink("latte",3.0,"medium")
+latte.describe()
+latte=drink("latte",3.0,"large")
+latte.describe()
 
