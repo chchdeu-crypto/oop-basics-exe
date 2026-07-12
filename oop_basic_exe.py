@@ -58,3 +58,17 @@ item.sell()
 item.status()
 item.restock()
 item.status()
+
+#mission 6
+class Coffeeshop():
+    def __init__(self,name,city,capacity):
+        self.name=name
+        self.city=city
+        self.capacity=capacity
+    def open_shop(self):
+        print(f"{self.name} is now open in {self.city}! capacity: {self.capacity} seats" )
+    def close_shop(self):
+        print(f"{self.name} is now closed see you tomorrow")
+shop=Coffeeshop("brew house","tel aviv",40)
+shop.open_shop()
+shop.close_shop()
