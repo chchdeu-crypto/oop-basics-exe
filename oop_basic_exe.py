@@ -215,7 +215,7 @@ class order():
         item1=""
         for item in self.items:
             if item[1]>time:
-                time+=item[1]
+                time=item[1]
                 item1=item[0]
         return item1
 moshe=order("moshe",[("latte",3),("sandwitch",7),("smoo",5)]) 
@@ -225,7 +225,25 @@ print(moshe.ready_by(20))
 moshe.print_order()
 print(moshe.slowest_item())
 
-
+#mission 4
+class Coffeshop():
+    def __init__(self,name):
+        self.name=name
+        self.revenue=0.0
+    def cell(self,item_name,price):
+        self.revenue+=price
+        print("revenue added successfully")
+    def sell_dicounted(self,item_name,price,dicount):
+        self.revenue+=price*(1-dicount)
+    def daily_summary(self):
+        print(f"{self.name}| daily revenue: ${self.revenue}")
+bean=Coffeshop("the bean")
+bean.cell("cookie",9)
+bean.cell("coffe",12)
+bean.cell("watter",7)
+bean.sell_dicounted("juice",16,0.8)
+bean.sell_dicounted("ice coffe",10,0.15)
+bean.daily_summary()
   
             
 
