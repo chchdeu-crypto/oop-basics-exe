@@ -36,3 +36,25 @@ class customer:
 customer_bob=customer("bob",10)
 customer_bob.can_afford(8.0)
 customer_bob.can_afford(12.0)
+
+#mission 5
+class Menuitem():
+    def __init__(self,name,price,in_stock):
+        self.name=name
+        self.price=price
+        self.in_stock=in_stock
+    def sell(self):
+        self.in_stock=False
+    def restock(self):
+        self.in_stock=True
+    def status(self):
+        if self.in_stock==True:
+            print(f"{self.name} is in stock")
+        else:
+            print(f"{self.name} is sold out")
+item=Menuitem("muffin",2.5,in_stock=True)
+item.status()
+item.sell()
+item.status()
+item.restock()
+item.status()
