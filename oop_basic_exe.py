@@ -168,3 +168,29 @@ print(item1.is_cheap(3.5))
 item2=menuitem("muffin",2.0,"food")
 print(item2.is_drink())
 print(item2.is_cheap(3.5))
+
+#mission 2
+class customer():
+    def __init__(self,name,balance):
+        self.name=name
+        self.balance=balance
+        self.points=0
+    def purchase(self,item_name,price):
+        if price>=self.balance:
+            self.balance-price
+            self.points+=10
+        else:
+            print(f"not enough balance for {item_name}")
+    def redeem(self):
+        if self.points>=50:
+            self.balance+=5
+            self.points=0
+    def status(self):
+        print(f"name: {self.name} | balance: ${self.balance} |points: {self.points} ")
+customer1=customer("noa",15.0)  
+customer1.purchase("pen",12) 
+customer1.redeem()
+customer1.status()
+customer1.purchase("pen",16)     
+customer1.redeem()
+customer1.status()
