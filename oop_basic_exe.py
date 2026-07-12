@@ -122,6 +122,31 @@ yossi_bar.make_dirnk("esppreso")
 print(yossi_bar.is_speciatly("esppreso"))
 yossi_bar.shift_summary()
 
-
-
-        
+#mission 10
+class receipt():
+    def __init__(self,tax_rate):
+        self.tax_rate=tax_rate
+        self.items=[]
+    def add_item(self,name,price):
+        items=(name,price)
+        self.items.append(items)
+    def subtotal(self):
+        total=0
+        for item in self.items:
+            total+=item[1]
+        return total
+    def tax_amount(self):
+        return self.subtotal()*self.tax_rate
+    def total(self):
+        return self.subtotal()+self.tax_amount()
+    def print_reciept(self):
+        for item in self.items:
+            print(f"-{item[0]}: {item[1]}")
+        print(f"subtotal {self.subtotal()}")
+        print(f"tax{self.tax_rate*100}%: {self.tax_amount()} ")
+        print(f"total ${self.total()}")
+receipt1=receipt(0.17)
+receipt1.add_item("latte",4.5)
+receipt1.add_item("oj",2.0)
+receipt1.add_item("watter",1.5)
+receipt1.print_reciept()
