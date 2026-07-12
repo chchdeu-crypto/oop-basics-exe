@@ -25,3 +25,14 @@ item2=menu_item("croissant",2.0)
 item2.describe()
 item3=menu_item("cold brew",5.0)
 item3.describe()
+
+#misison 4
+class customer:
+    def __init__(self,name,balance):
+        self.name=name
+        self.balance=balance
+    def can_afford(self,price):
+        print(True) if price<=self.balance else print(False)
+customer_bob=customer("bob",10)
+customer_bob.can_afford(8.0)
+customer_bob.can_afford(12.0)
