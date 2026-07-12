@@ -314,4 +314,33 @@ happy = HappyHour(16, 18, 20)
 print(happy.is_active(17))
 print(happy.discounted_price(item))
 print(happy.is_active(19))
+
+#mission 8
+class MenuItem:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+class Combo:
+    def __init__(self, name, items, discount):
+        self.name = name
+        self.items = items
+        self.discount = discount
+    def original_price(self):
+        total = 0
+        for item in self.items:
+            total += item.price
+        return total
+    def combo_price(self):
+        return self.original_price() * (1 - self.discount)
+    def savings(self):
+        return self.original_price() - self.combo_price()
+    def describe(self):
+        print(f"Combo: {self.name}")
+        print(f"Original price: ${self.original_price()}")
+        print(f"Combo price: ${self.combo_price()}")
+        print(f"Savings: ${self.savings()}")
+coffee = MenuItem("Espresso", 3.5)
+croissant = MenuItem("Croissant", 2.5)
+breakfast = Combo("Breakfast", [coffee, croissant], 0.1)
+breakfast.describe()
         
