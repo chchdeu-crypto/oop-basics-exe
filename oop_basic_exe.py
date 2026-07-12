@@ -294,3 +294,24 @@ class Shift:
 
 shift = Shift("Lior", 8, 16, 120)
 shift.describe()
+
+#mission 7
+class MenuItem:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+class HappyHour:
+    def __init__(self, start_hour, end_hour, discount_percent):
+        self.start_hour = start_hour
+        self.end_hour = end_hour
+        self.discount_percent = discount_percent
+    def is_active(self, current_hour):
+        return self.start_hour <= current_hour < self.end_hour
+    def discounted_price(self, item):
+        return item.price * (1 - self.discount_percent / 100)
+item = MenuItem("Beer", 20.0)
+happy = HappyHour(16, 18, 20)
+print(happy.is_active(17))
+print(happy.discounted_price(item))
+print(happy.is_active(19))
+        
