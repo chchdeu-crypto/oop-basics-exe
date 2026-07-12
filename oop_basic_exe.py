@@ -100,5 +100,28 @@ class order():
             print(f"- {item}")
 dana_order=order("dana",["latte","croissant","oj"]) 
 dana_order.print_order()             
-chaim=order("chaim",[1,2,])
-chaim.print_order()
+
+#mission 9
+class barista():
+    def __init__(self,name,specialty):
+        self.name=name
+        self.specialty=specialty
+        self.drinks_made=0
+    def make_dirnk(self,drink_name):
+        print(f"{self.name} made a {drink_name}")
+        self.drinks_made+=1
+    def is_speciatly(self,drink_name):
+        return True if self.specialty==drink_name else  False
+    def shift_summary(self):
+        print(f"{self.name} made {self.drinks_made} drinks today")
+yossi_bar=barista("yossi","esppreso")
+yossi_bar.make_dirnk("makiato")
+yossi_bar.make_dirnk("oj")
+yossi_bar.make_dirnk("latte")
+yossi_bar.make_dirnk("esppreso")
+print(yossi_bar.is_speciatly("esppreso"))
+yossi_bar.shift_summary()
+
+
+
+        
